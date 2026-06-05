@@ -11,7 +11,7 @@
 **Server IP:** 20.213.188.200
 **Domain:** zestra.fun
 **GitHub Repository:** https://github.com/mohammedmusab092-cloud/Project-of-ICT--171
-**Video Demonstration:** [Insert Video Link]
+
 
 Murdoch University – Perth, Western Australia
 
@@ -114,20 +114,6 @@ https://github.com/mohammedmusab092-cloud/Project-of-ICT--171
 
 ---
 
-# Screenshots
-
-Include screenshots of:
-
-1. Homepage
-2. Registration Page
-3. Login Page
-4. Dashboard
-5. Fitness Tracking Features
-6. Support Page
-7. Server Status Dashboard
-8. Azure Virtual Machine
-9. GitHub Repository
-10. SSL Certificate Information
 
 ---
 
