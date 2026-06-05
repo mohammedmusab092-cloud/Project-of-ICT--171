@@ -1,0 +1,27 @@
+## Backup Script
+
+A Bash backup script was created to automatically back up the website files.
+
+### Purpose
+
+The script copies the website directory from `/var/www/html` to a backup folder located in the user's home directory.
+
+### Benefits
+
+* Protects website files from accidental deletion
+* Allows quick restoration of the website
+* Demonstrates Linux scripting skills
+
+### Usage
+
+```bash
+./backup.sh
+```
+
+### Output
+
+```text
+Website backup completed successfully
+```
+
+The successful creation of the `website_backup` folder verifies that the script executed correctly.
