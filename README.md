@@ -88,7 +88,15 @@ Benefits include:
 * Industry-standard web protection
 
 ----
+Bash Script
 
+
+A Bash backup script was created to automatically back up the website files.
+
+Website backup completed successfully
+
+The successful creation of the website_backup folder verifies that the script executed correctly.
+Benefits
 ----
 # GitHub Version Control
 
