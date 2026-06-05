@@ -87,8 +87,9 @@ Benefits include:
 * Improved website trust and security
 * Industry-standard web protection
 
----
+----
 
+----
 # GitHub Version Control
 
 GitHub was used to manage source code, documentation, and project development history.
