@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZestraFit | Fitness Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1120;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #22c55e;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #22c55e;
+    }
+
+    .hero {
+      min-height: 85vh;
+      padding: 70px 8%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      color: #22c55e;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 19px;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    .primary {
+      background: #22c55e;
+      color: #052e16;
+    }
+
+    .secondary {
+      border: 1px solid #22c55e;
+      color: white;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #172033, #111827);
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    .hero-card h2 {
+      margin-bottom: 18px;
+      color: #86efac;
+    }
+
+    .stat {
+      background: #0f172a;
+      margin-bottom: 14px;
+      padding: 16px;
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .section {
+      padding: 60px 8%;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      text-align: center;
+      color: #cbd5e1;
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      background: #111827;
+      padding: 25px;
+      border-radius: 18px;
+      border: 1px solid #1f2937;
+    }
+
+    .feature h3 {
+      color: #22c55e;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    .cta {
+      background: #111827;
+      margin: 40px 8%;
+      padding: 45px;
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .chat-button {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      background: #22c55e;
+      color: #052e16;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 26px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+
+    footer {
+      padding: 25px 8%;
+      text-align: center;
+      color: #94a3b8;
+      background: #020617;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #22c55e;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 8px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .buttons a {
+        display: block;
+        margin: 12px auto;
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ZestraFit</div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/register.php">Register</a>
+    <a href="/login.php">Login</a>
+    <a href="/dashboard.php">Dashboard</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Your Simple <span>Fitness Tracker</span></h1>
+    <p>
+      Track your workouts, water intake, BMI records, and daily steps in one clean dashboard.
+      ZestraFit helps you stay consistent and improve a little every day.
+    </p>
+
+    <div class="buttons">
+      <a class="primary" href="/register.php">Start Tracking</a>
+      <a class="secondary" href="/login.php">Login</a>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <h2>Today’s Fitness Goals</h2>
+
+    <div class="stat">
+      <strong>Workout</strong>
+      <span>Log activity</span>
+    </div>
+
+    <div class="stat">
+      <strong>Water</strong>
+      <span>Track intake</span>
+    </div>
+
+    <div class="stat">
+      <strong>BMI</strong>
+      <span>Save record</span>
+    </div>
+
+    <div class="stat">
+      <strong>Steps</strong>
+      <span>Monitor progress</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Fitness Features</h2>
+  <p class="section-intro">
+    A simple personal fitness system designed for everyday tracking.
+  </p>
+
+  <div class="features">
+    <div class="feature">
+      <h3>Workout Logs</h3>
+      <p>Save your exercises, sets, reps, and training notes.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Water Tracker</h3>
+      <p>Record daily water intake and build healthier habits.</p>
+    </div>
+
+    <div class="feature">
+      <h3>BMI Records</h3>
+      <p>Save BMI updates and monitor your body progress.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Step Tracking</h3>
+      <p>Keep simple records of your daily movement and steps.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to start?</h2>
+  <p>Create an account and begin saving your personal fitness logs.</p>
+  <div class="buttons">
+    <a class="primary" href="/register.php">Create Account</a>
+    <a class="secondary" href="/login.php">Already have an account?</a>
+  </div>
+</section>
+
+<a class="chat-button" href="/support.php" title="Support">💬</a>
+
+<footer>
+  <p>
+    ZestraFit Fitness Tracker | Muhammad Musab Qasir | Student ID: 35991305
+    <a href="/support.php">Support</a>
+    <a href="/status.php">System Status</a>
+  </p>
+</footer>
+
+</body>
+</html>

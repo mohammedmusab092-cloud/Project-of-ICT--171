@@ -6,11 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: Arial, sans-serif;
@@ -25,9 +21,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
     }
 
     .logo {
@@ -39,16 +32,13 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 22px;
+      margin-left: 18px;
       font-size: 15px;
     }
 
-    nav a:hover {
-      color: #22c55e;
-    }
+    nav a:hover { color: #22c55e; }
 
     .hero {
-      min-height: 85vh;
       padding: 70px 8%;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -57,14 +47,12 @@
     }
 
     .hero h1 {
-      font-size: 56px;
+      font-size: 52px;
       line-height: 1.1;
       margin-bottom: 20px;
     }
 
-    .hero span {
-      color: #22c55e;
-    }
+    .hero span { color: #22c55e; }
 
     .hero p {
       color: #cbd5e1;
@@ -73,102 +61,82 @@
       margin-bottom: 28px;
     }
 
-    .buttons a {
+    .btn {
       display: inline-block;
       padding: 14px 24px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
       margin-right: 12px;
-    }
-
-    .primary {
       background: #22c55e;
       color: #052e16;
     }
 
-    .secondary {
+    .btn-outline {
+      background: transparent;
       border: 1px solid #22c55e;
       color: white;
     }
 
-    .hero-card {
-      background: linear-gradient(145deg, #172033, #111827);
-      padding: 30px;
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    .hero-card, .tool-card {
+      background: #111827;
+      padding: 26px;
+      border-radius: 20px;
+      border: 1px solid #1f2937;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
     }
 
-    .hero-card h2 {
-      margin-bottom: 18px;
-      color: #86efac;
-    }
-
-    .stat {
-      background: #0f172a;
-      margin-bottom: 14px;
-      padding: 16px;
-      border-radius: 14px;
-      display: flex;
-      justify-content: space-between;
-    }
+    .hero-card h2, .tool-card h3 { color: #86efac; margin-bottom: 15px; }
 
     .section {
-      padding: 60px 8%;
+      padding: 50px 8%;
     }
 
     .section h2 {
       text-align: center;
-      font-size: 36px;
-      margin-bottom: 12px;
+      font-size: 34px;
+      margin-bottom: 10px;
     }
 
     .section-intro {
       text-align: center;
       color: #cbd5e1;
-      max-width: 650px;
-      margin: 0 auto 40px;
+      margin-bottom: 35px;
     }
 
-    .features {
+    .tools {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
 
-    .feature {
-      background: #111827;
-      padding: 25px;
-      border-radius: 18px;
-      border: 1px solid #1f2937;
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
     }
 
-    .feature h3 {
-      color: #22c55e;
-      margin-bottom: 10px;
+    button {
+      background: #22c55e;
+      color: #052e16;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 8px;
     }
 
-    .feature p {
-      color: #cbd5e1;
-      font-size: 15px;
-    }
-
-    .cta {
-      background: #111827;
-      margin: 40px 8%;
-      padding: 45px;
-      border-radius: 24px;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      color: #cbd5e1;
-      margin-bottom: 25px;
+    .result, .list-box {
+      margin-top: 12px;
+      background: #0f172a;
+      padding: 12px;
+      border-radius: 10px;
+      color: #e5e7eb;
+      min-height: 45px;
     }
 
     .chat-button {
@@ -202,45 +170,12 @@
       margin-left: 10px;
     }
 
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .features {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      header {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      nav a {
-        margin: 8px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .buttons a {
-        display: block;
-        margin: 12px auto;
-        max-width: 240px;
-      }
+    @media (max-width: 850px) {
+      header { flex-direction: column; gap: 12px; }
+      nav a { display: inline-block; margin: 7px; }
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .tools { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 40px; }
     }
   </style>
 </head>
@@ -251,6 +186,7 @@
   <div class="logo">ZestraFit</div>
   <nav>
     <a href="/">Home</a>
+    <a href="#tools">Fitness Tools</a>
     <a href="/register.php">Register</a>
     <a href="/login.php">Login</a>
     <a href="/dashboard.php">Dashboard</a>
@@ -261,76 +197,59 @@
   <div>
     <h1>Your Simple <span>Fitness Tracker</span></h1>
     <p>
-      Track your workouts, water intake, BMI records, and daily steps in one clean dashboard.
-      ZestraFit helps you stay consistent and improve a little every day.
+      Track BMI, water intake, workouts, and steps from one clean fitness platform.
+      Create an account to save your personal fitness logs.
     </p>
-
-    <div class="buttons">
-      <a class="primary" href="/register.php">Start Tracking</a>
-      <a class="secondary" href="/login.php">Login</a>
-    </div>
   </div>
-
+   <a class="btn" href="#tools">Start Tracking</a>
+<a class="btn btn-outline" href="/register.php">Create Account</a>
+<a class="btn btn-outline" href="/login.php">Login</a>
   <div class="hero-card">
-    <h2>Today’s Fitness Goals</h2>
-
-    <div class="stat">
-      <strong>Workout</strong>
-      <span>Log activity</span>
-    </div>
-
-    <div class="stat">
-      <strong>Water</strong>
-      <span>Track intake</span>
-    </div>
-
-    <div class="stat">
-      <strong>BMI</strong>
-      <span>Save record</span>
-    </div>
-
-    <div class="stat">
-      <strong>Steps</strong>
-      <span>Monitor progress</span>
-    </div>
+    <h2>Daily Fitness Focus</h2>
+    <p>✅ Calculate BMI</p>
+    <p>✅ Track Water Intake</p>
+    <p>✅ Save Workout Notes</p>
+    <p>✅ Record Daily Steps</p>
+    <p>✅ Login to store records</p>
   </div>
 </section>
 
-<section class="section">
-  <h2>Fitness Features</h2>
-  <p class="section-intro">
-    A simple personal fitness system designed for everyday tracking.
-  </p>
+<section class="section" id="tools">
+  <h2>Fitness Tools</h2>
+  <p class="section-intro">Use these tools instantly, or log in to save your records permanently.</p>
 
-  <div class="features">
-    <div class="feature">
-      <h3>Workout Logs</h3>
-      <p>Save your exercises, sets, reps, and training notes.</p>
+  <div class="tools">
+
+    <div class="tool-card">
+      <h3>BMI Calculator</h3>
+      <input type="number" id="height" placeholder="Height in cm">
+      <input type="number" id="weight" placeholder="Weight in kg">
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <div class="result" id="bmiResult">Your BMI result will appear here.</div>
     </div>
 
-    <div class="feature">
+    <div class="tool-card">
       <h3>Water Tracker</h3>
-      <p>Record daily water intake and build healthier habits.</p>
+      <input type="number" id="waterAmount" placeholder="Water in ml">
+      <button onclick="addWater()">Add Water</button>
+      <div class="result" id="waterResult">Water today: 0 ml</div>
     </div>
 
-    <div class="feature">
-      <h3>BMI Records</h3>
-      <p>Save BMI updates and monitor your body progress.</p>
+    <div class="tool-card">
+      <h3>Workout Log</h3>
+      <input type="text" id="exercise" placeholder="Exercise name">
+      <input type="text" id="sets" placeholder="Sets / Reps e.g. 3 x 12">
+      <button onclick="addWorkout()">Add Workout</button>
+      <div class="list-box" id="workoutList">No workouts added yet.</div>
     </div>
 
-    <div class="feature">
-      <h3>Step Tracking</h3>
-      <p>Keep simple records of your daily movement and steps.</p>
+    <div class="tool-card">
+      <h3>Step Tracker</h3>
+      <input type="number" id="steps" placeholder="Steps walked today">
+      <button onclick="addSteps()">Add Steps</button>
+      <div class="result" id="stepsResult">Steps today: 0</div>
     </div>
-  </div>
-</section>
 
-<section class="cta">
-  <h2>Ready to start?</h2>
-  <p>Create an account and begin saving your personal fitness logs.</p>
-  <div class="buttons">
-    <a class="primary" href="/register.php">Create Account</a>
-    <a class="secondary" href="/login.php">Already have an account?</a>
   </div>
 </section>
 
@@ -338,11 +257,99 @@
 
 <footer>
   <p>
-    ZestraFit Fitness Tracker | Muhammad Musab Qasir | Student ID: 35991305
+    ZestraFit | Muhammad Musab Qasir | Student ID: 35991305
     <a href="/support.php">Support</a>
     <a href="/status.php">System Status</a>
   </p>
 </footer>
+
+<script>
+  let waterTotal = Number(localStorage.getItem("waterTotal")) || 0;
+  let stepsTotal = Number(localStorage.getItem("stepsTotal")) || 0;
+  let workouts = JSON.parse(localStorage.getItem("workouts")) || [];
+
+  document.getElementById("waterResult").innerText = "Water today: " + waterTotal + " ml";
+  document.getElementById("stepsResult").innerText = "Steps today: " + stepsTotal;
+  updateWorkoutList();
+
+  function calculateBMI() {
+    let height = Number(document.getElementById("height").value);
+    let weight = Number(document.getElementById("weight").value);
+
+    if (!height || !weight) {
+      document.getElementById("bmiResult").innerText = "Please enter both height and weight.";
+      return;
+    }
+
+    let bmi = weight / ((height / 100) * (height / 100));
+    let category = "";
+
+    if (bmi < 18.5) category = "Underweight";
+    else if (bmi < 25) category = "Normal weight";
+    else if (bmi < 30) category = "Overweight";
+    else category = "Obese";
+
+    document.getElementById("bmiResult").innerText =
+      "BMI: " + bmi.toFixed(1) + " (" + category + ")";
+  }
+
+  function addWater() {
+    let amount = Number(document.getElementById("waterAmount").value);
+
+    if (!amount) {
+      alert("Please enter water amount.");
+      return;
+    }
+
+    waterTotal += amount;
+    localStorage.setItem("waterTotal", waterTotal);
+    document.getElementById("waterResult").innerText = "Water today: " + waterTotal + " ml";
+    document.getElementById("waterAmount").value = "";
+  }
+
+  function addWorkout() {
+    let exercise = document.getElementById("exercise").value;
+    let sets = document.getElementById("sets").value;
+
+    if (!exercise || !sets) {
+      alert("Please enter exercise and sets/reps.");
+      return;
+    }
+
+    workouts.push(exercise + " - " + sets);
+    localStorage.setItem("workouts", JSON.stringify(workouts));
+
+    document.getElementById("exercise").value = "";
+    document.getElementById("sets").value = "";
+
+    updateWorkoutList();
+  }
+
+  function updateWorkoutList() {
+    let box = document.getElementById("workoutList");
+
+    if (workouts.length === 0) {
+      box.innerHTML = "No workouts added yet.";
+      return;
+    }
+
+    box.innerHTML = workouts.map(item => "• " + item).join("<br>");
+  }
+
+  function addSteps() {
+    let steps = Number(document.getElementById("steps").value);
+
+    if (!steps) {
+      alert("Please enter steps.");
+      return;
+    }
+
+    stepsTotal += steps;
+    localStorage.setItem("stepsTotal", stepsTotal);
+    document.getElementById("stepsResult").innerText = "Steps today: " + stepsTotal;
+    document.getElementById("steps").value = "";
+  }
+</script>
 
 </body>
 </html>
